@@ -33,6 +33,7 @@ const registerRoute = async(req,res)=>{
     } catch (error) {
         res.status(501).json({success:false,message:error.message})
     }
+   
 
 }
 
@@ -61,10 +62,13 @@ const loginRoute = async(req,res)=>{
         }
         const token = jwt.sign({user},process.env.JWT_SECRET)
         res.status(201).json({success:true,token})
+
+       
     }
     catch(err){
         res.status(501).json({success:false,message:err.message})
     }
+   
 
 }
 

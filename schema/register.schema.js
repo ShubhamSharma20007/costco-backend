@@ -10,6 +10,7 @@ const RegisterModel = new Schema({
         type:String,
         required :true
     },
+    
     user_group:{
         type:String,
         default:'user'

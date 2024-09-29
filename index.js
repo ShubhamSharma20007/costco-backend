@@ -4,6 +4,7 @@ const app =  express()
 const cors = require('cors')
 const connectionDB =  require('./db/connection.js')
 const userRouter = require('./routes/user.route.js')
+const cartRouter = require('./routes/cart.route.js')
 connectionDB()
 
 
@@ -16,6 +17,7 @@ app.use(express.json())
 
 // routes
 app.use('/v1/api/user',userRouter)
+app.use('/v1/api/cart',cartRouter)
 
 
 
