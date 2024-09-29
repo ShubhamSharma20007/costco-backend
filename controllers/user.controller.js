@@ -59,7 +59,7 @@ const loginRoute = async(req,res)=>{
         if(!isMatch){
             return res.status(401).json({success:false,message:'wrong password'})
         }
-        const token = jwt.sign({user},process.env.JWT_SECRET,{expiresIn:'1h'})
+        const token = jwt.sign({user},process.env.JWT_SECRET)
         res.status(201).json({success:true,token})
     }
     catch(err){
